@@ -8,7 +8,7 @@ CREATE TABLE Artist(
     birthDate DATE,
     birthplace VARCHAR(30),
     PRIMARY KEY (artistId),
-    UNIQUE (artistName),
+--     UNIQUE (artistName),
     -- check the format of the birthDate to be united as '%Y-%m-%d'
     CHECK (birthDate IS strftime('%Y-%m-%d',birthDate))
 );
@@ -63,7 +63,7 @@ CREATE TABLE Date(
     CHECK (
         CASE
             WHEN month = 1 THEN day BETWEEN 01 AND 31
-            WHEN month = 2 THEN day BETWEEN 01 AND 28
+            WHEN month = 2 THEN day BETWEEN 01 AND 29
             WHEN month = 3 THEN day BETWEEN 01 AND 31
             WHEN month = 4 THEN day BETWEEN 01 AND 30
             WHEN month = 5 THEN day BETWEEN 01 AND 31
